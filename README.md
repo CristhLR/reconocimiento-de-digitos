@@ -1,73 +1,27 @@
-# React + TypeScript + Vite
+- Reconocimiento de Dígitos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nuestro proyecto fue desarrollado en React + TypeScript + Vite + TailwindCSS para realizar el reconocimiento de dígitos.
+Permite subir imágenes, normalizarlas a 28×28 píxeles, invertirlas si es necesario, enviarlas al servidor y mostrar la predicción con su precisión. Además, guarda un historial local de las predicciones realizadas.
 
-Currently, two official plugins are available:
+- Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📂 Subida de imágenes en 28x28 px en PNG.
+- 🔄 Opción para invertir la imagen antes de enviarla.   
+- 📊 Visualización de la predicción, precisión y tiempo de procesamiento.  
+- 🗂️ Historial de predicciones almacenado en localStorage.
+- 🎨 Interfaz moderna y responsiva con TailwindCSS.  
 
-## React Compiler
+- 🛠️ Bases del proyecto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ⚛️ [React](https://react.dev/)  
+- ⌨️ [TypeScript](https://www.typescriptlang.org/)  
+- ⚡ [Vite](https://vitejs.dev/)  
+- 🎨 [TailwindCSS](https://tailwindcss.com/)  
+- 🔔 [SweetAlert2](https://sweetalert2.github.io/)  
 
-## Expanding the ESLint configuration
+- instlacion
+- npm install
+- npm i react-router-dom
+- npm i -D @types/react-router-dom
+- npm run dev.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
